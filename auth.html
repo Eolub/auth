@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+      	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes"/>
+        <title>m3awardr - Login</title>
+        <script>
+            var verifier;
+         /* old frob authentication -> deprecated 
+		 if(document.URL.match("frob")){
+                frob=document.URL.slice(document.URL.search("frob")+5);
+                window.opener.postMessage(frob,"*");
+            }*/
+			if(document.URL.match("oauth")){
+			
+			verifier=document.URL.slice(document.URL.search("verifier")+9);
+			window.opener.postMessage(verifier,"*");
+			window.close();
+			}
+			
+        </script>
+    </head>
+    <body>
+        Einloggen...
+    </body>
+</html>
